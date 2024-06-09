@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('git scm update') {
       steps {
-        git url: 'https://github.com/IaC-Sources/echo-ip.git', branch: 'main'
+        git url: 'https://github.com/k8s-edu/Bkv2_sub_echo-ip.git', branch: 'main'
       }
     }   
     stage('docker build and push') {
