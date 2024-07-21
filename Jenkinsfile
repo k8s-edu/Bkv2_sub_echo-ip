@@ -19,10 +19,10 @@ pipeline {
     stage('deploy kubernetes') {
       steps {
         sh '''
-        kubectl create deployment pl-bulk-prod --image=192.168.1.10:8443/library/echo-ip \
+        kubectl create deployment pl-echo-ip --image=192.168.1.10:8443/library/echo-ip \
                                                -n default
-        kubectl expose deployment pl-bulk-prod --type=LoadBalancer --port=8080 \
-                                               --target-port=80 --name=pl-bulk-prod-svc \
+        kubectl expose deployment pl-echo-ip --type=LoadBalancer --port=8080 \
+                                               --target-port=80 --name=pl-echo-ip-svc \
                                                -n default
         '''
       }
