@@ -21,7 +21,7 @@ pipeline {
         sh '''
         kubectl create deployment pl-echo-ip --image=192.168.1.10:8443/library/echo-ip \
                                                -n default
-        kubectl expose deployment pl-echo-ip --type=LoadBalancer --port=8080 \
+        kubectl expose deployment pl-echo-ip --type=LoadBalancer --port=80 \
                                                --target-port=80 --name=pl-echo-ip-svc \
                                                -n default
         '''
